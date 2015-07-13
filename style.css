@@ -188,7 +188,7 @@ img {
   position: absolute;
 }
 .active {
-  color: #d37f06 !important;
+  color: #f34393 !important;
 }
 .fixed {
   position: fixed !important;
@@ -463,7 +463,7 @@ body .sidebar_wrapper {
   float: left;
 }
 body .sidebar_wrapper p {
-  color: #d37f06;
+  color: #f34393;
   font-weight: 400;
   font-size: 11px;
   text-align: center;
@@ -560,7 +560,7 @@ body .intro .intro_wrapper .content {
   margin-top: -90px;
 }
 body .intro .intro_wrapper .content #title {
-  color: #d37f06;
+  color: #f34393;
   font-weight: 400;
 }
 
@@ -603,11 +603,11 @@ body .intro .nav .nav_fixed li a {
 }
 body .intro .nav .navbar li:hover,
 body .intro .nav .nav_fixed li:hover {
-  color: #d37f06;
+  color: #f34393;
 }
 body .intro .nav .navbar a:hover,
 body .intro .nav .nav_fixed a:hover {
-  color: #d37f06;
+  color: #f34393;
   -webkit-transition: all 0.7s ease 0s;
   -moz-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;
@@ -647,7 +647,7 @@ body #portfolio #port_container .item #filters li a {
   transition: all 0.7s ease 0s;
 }
 body #portfolio #port_container .item #filters li a:hover {
-  color: #d37f06;
+  color: #f34393;
 }
 body #portfolio #port_container .item img {
   width: 100%;
@@ -770,7 +770,7 @@ body #about .about_content .about_column p {
 }
 body #about .about_content .about_column h4 {
   text-transform: uppercase;
-  color: #d37f06;
+  color: #f34393;
   font-weight: 700;
   font-size: 13px;
   padding-bottom: 5px;
@@ -780,7 +780,7 @@ body #about .about_content .about_column #about_contact {
   padding-top: 35px;
 }
 body #about .about_content .about_column #about_contact a {
-  color: #d37f06;
+  color: #f34393;
   font-weight: 500;
 }
 body #about .about_content .about_column:last-child {
@@ -828,7 +828,7 @@ body .connect {
   text-align: center;
 }
 body .connect a {
-  color: #d37f06;
+  color: #f34393;
   font-weight: 500;
 }
 footer {
