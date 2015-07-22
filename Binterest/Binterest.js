@@ -21,6 +21,9 @@ var map = L.mapbox.map('map', 'mapbox.streets')
   }
 }).addTo(map);
 
+map.on('draw:created', chkArea);
+map.on('draw:edited', chkAreaEdited);
+
 var drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems);
  
@@ -28,18 +31,31 @@ map.addLayer(drawnItems);
 
     var type = e.layerType,
         layer = e.layer;
-	var bounds=map.getBounds();
-	var nw=bounds.getNorthWest();
-	var se=bounds.getSouthEast();
-   
-        layer.on('mouseover', function() {
-            alert("North West:" + nw + " South East:" + se);    
-        });
+	
     
 
     drawnItems.addLayer(layer);
 });
- 
+
+function chkAreaEdited(e) {
+  e.layers.eachLayer(function(layer) {
+    chkArea({ layer: layer });
+  });
+}
+function chkArea(e) {
+  featureGroup.clearLayers();
+  featureGroup.addLayer(e.layer);
+  var area = (LGeo.area(e.layer) / 1000000).toFixed(2);
+  if(area> 100.00){
+	  alert("Selected area is too large! Please select an area less than 100km squared.");
+  }else{
+	var bounds=map.getBounds();
+	var nw=bounds.getNorthWest();
+	var se=bounds.getSouthEast();
+	e.layer.bindPopup("NW: " + nw + " SE: " + se);
+  e.layer.openPopup();
+  }
+} 
  
 function load() {
   // Fetch just the contents of a .geojson file from GitHub by passing
