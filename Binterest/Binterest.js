@@ -48,15 +48,15 @@ function chkArea(e) {
   featureGroup.clearLayers();
   featureGroup.addLayer(e.layer);
   var area = (LGeo.area(e.layer) / 1000000).toFixed(2);
-  if(area> 100.00){
-	  alert("Selected area is too large! Please select an area less than 100km squared.");
+  if(area> 100.00){ 
+	  e.layer.bindPopup("Selected area is too large! Please select an area less than 100km squared.");
   }else{
 	var bounds=map.getBounds();
 	var nw=bounds.getNorthWest();
 	var se=bounds.getSouthEast();
 	e.layer.bindPopup("NW: " + nw + " SE: " + se);
-  e.layer.openPopup();
   }
+   e.layer.openPopup();
 } 
  
 function load() {
