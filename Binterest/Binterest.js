@@ -2,7 +2,7 @@ L.mapbox.accessToken = 'pk.eyJ1Ijoic2FoaXRpIiwiYSI6Ijk1ZjFlZWM2ZWVlYzg4NDExZTQzM
 var url = 'https://api.github.com/repos/mapbox/mapbox.js/contents/test/manual/example.geojson';
 
 var map = L.mapbox.map('map', 'mapbox.streets')
-  .setView([0.3941, -78.2227], 7)
+  .setView([30.05899, -95.3698], 10)
   .addControl(L.mapbox.geocoderControl('mapbox.places'));
 
  var featureGroup = L.featureGroup().addTo(map);
@@ -23,7 +23,9 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 
 map.on('draw:created', chkArea);
 map.on('draw:edited', chkAreaEdited);
-
+if(drawnItems != null){
+map.removeLayer(drawnItems);
+}
 var drawnItems = new L.FeatureGroup();
 map.addLayer(drawnItems);
  
