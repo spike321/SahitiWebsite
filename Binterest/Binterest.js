@@ -28,10 +28,12 @@ map.addLayer(drawnItems);
 
     var type = e.layerType,
         layer = e.layer;
-
+	var bounds=map.getBounds();
+	var nw=bounds.getNorthWest();
+	var se=bounds.getSouthEast();
    
         layer.on('mouseover', function() {
-            alert(layer.getLatLngs());    
+            alert("North West:" + nw + " South East:" + se);    
         });
     
 
